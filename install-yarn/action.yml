@@ -1,0 +1,17 @@
+#
+# Install Yarn Action
+#
+# @author: Skitsanos, https://github.com/skitsanos
+# @version 1.0.0
+#
+name: Install yarn
+
+runs:
+  using: 'composite'
+  steps:
+    - name: Installing yarn ...
+      shell: bash
+      run: |
+        sudo apt-key adv --refresh-keys --keyserver keyserver.ubuntu.com
+        curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | sudo apt-key add -
+        sudo apt install yarn -y
